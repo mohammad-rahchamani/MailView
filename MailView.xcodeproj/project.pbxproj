@@ -15,7 +15,33 @@
 		B5085BE624A40930005F6E6A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B5085BE524A40930005F6E6A /* Assets.xcassets */; };
 		B5085BE924A40930005F6E6A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B5085BE824A40930005F6E6A /* Preview Assets.xcassets */; };
 		B5085BEC24A40930005F6E6A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5085BEA24A40930005F6E6A /* LaunchScreen.storyboard */; };
+		B5085BF224A40A2C005F6E6A /* MailView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5085BCC24A4061D005F6E6A /* MailView.framework */; };
+		B5085BF324A40A2C005F6E6A /* MailView.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B5085BCC24A4061D005F6E6A /* MailView.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		B5085BF424A40A2C005F6E6A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B5085BC324A4061D005F6E6A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B5085BCB24A4061D005F6E6A;
+			remoteInfo = MailView;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		B5085BF624A40A2C005F6E6A /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				B5085BF324A40A2C005F6E6A /* MailView.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		B5085BCC24A4061D005F6E6A /* MailView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MailView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -44,6 +70,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B5085BF224A40A2C005F6E6A /* MailView.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,6 +83,7 @@
 				B5085BCE24A4061D005F6E6A /* MailView */,
 				B5085BDE24A4092E005F6E6A /* MailViewExample */,
 				B5085BCD24A4061D005F6E6A /* Products */,
+				B5085BF124A40A2C005F6E6A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -100,6 +128,13 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		B5085BF124A40A2C005F6E6A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -139,10 +174,12 @@
 				B5085BD924A4092E005F6E6A /* Sources */,
 				B5085BDA24A4092E005F6E6A /* Frameworks */,
 				B5085BDB24A4092E005F6E6A /* Resources */,
+				B5085BF624A40A2C005F6E6A /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				B5085BF524A40A2C005F6E6A /* PBXTargetDependency */,
 			);
 			name = MailViewExample;
 			productName = MailViewExample;
@@ -227,6 +264,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		B5085BF524A40A2C005F6E6A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B5085BCB24A4061D005F6E6A /* MailView */;
+			targetProxy = B5085BF424A40A2C005F6E6A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		B5085BEA24A40930005F6E6A /* LaunchScreen.storyboard */ = {
