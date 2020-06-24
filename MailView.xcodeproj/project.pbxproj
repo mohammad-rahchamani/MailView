@@ -17,7 +17,6 @@
 		B5085BEC24A40930005F6E6A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5085BEA24A40930005F6E6A /* LaunchScreen.storyboard */; };
 		B5085BF224A40A2C005F6E6A /* MailView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5085BCC24A4061D005F6E6A /* MailView.framework */; };
 		B5085BF324A40A2C005F6E6A /* MailView.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B5085BCC24A4061D005F6E6A /* MailView.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		B5085BF824A40F3D005F6E6A /* SafeMailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5085BF724A40F3D005F6E6A /* SafeMailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,7 +56,6 @@
 		B5085BE824A40930005F6E6A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		B5085BEB24A40930005F6E6A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B5085BED24A40930005F6E6A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B5085BF724A40F3D005F6E6A /* SafeMailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafeMailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,7 +102,6 @@
 				B5085BCF24A4061D005F6E6A /* MailView.h */,
 				B5085BD024A4061D005F6E6A /* Info.plist */,
 				B5085BD724A407B8005F6E6A /* MailView.swift */,
-				B5085BF724A40F3D005F6E6A /* SafeMailView.swift */,
 			);
 			path = MailView;
 			sourceTree = "<group>";
@@ -252,7 +249,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B5085BF824A40F3D005F6E6A /* SafeMailView.swift in Sources */,
 				B5085BD824A407B8005F6E6A /* MailView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
