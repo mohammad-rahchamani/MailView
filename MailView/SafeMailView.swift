@@ -11,10 +11,13 @@ import SwiftUI
 
 public struct SafeMailView: View {
     
+    @Binding var isShowing: Bool
+    
     let subject: String
     
-    public init(subject: String = "") {
-        
+    public init(isShowing: Binding<Bool>,
+                subject: String = "") {
+        self._isShowing = isShowing
         self.subject = subject
         
     }
@@ -22,7 +25,8 @@ public struct SafeMailView: View {
     public var body: some View {
         Group {
             if MailView.canSendMail {
-                MailView(subject: self.subject)
+                MailView(isShowing: self.$isShowing,
+                         subject: self.subject)
             } else {
                 Text("test")
             }
