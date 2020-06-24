@@ -13,19 +13,31 @@ import SwiftUI
 public struct MailView: UIViewControllerRepresentable {
     
     let subject: String
+    let recipients: [String]?
     
-    public init(subject: String = "") {
+    public init(recipients: [String]? = nil,
+                subject: String = "") {
+        self.recipients = recipients
         self.subject = subject
+    }
+    
+    public func makeCoordinator() -> Coordinator {
+        Coordinator()
     }
     
     public func makeUIViewController(context: Context) -> MFMailComposeViewController {
         let viewController = MFMailComposeViewController()
+        viewController.setToRecipients(self.recipients)
         viewController.setSubject(self.subject)
         //
         return viewController
     }
     
     public func updateUIViewController(_ uiViewController: MFMailComposeViewController, context: Context) {
+        
+    }
+    
+    public class Coordinator: NSObject {
         
     }
     
