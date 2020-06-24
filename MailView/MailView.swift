@@ -10,9 +10,9 @@ import Foundation
 import MessageUI
 import SwiftUI
 
+public typealias AttachmentData = (Data, String, String)
+
 public struct MailView: UIViewControllerRepresentable {
-    
-    public typealias AttachmentData = (Data, String, String)
     
     @Binding var isShowing: Bool
     
