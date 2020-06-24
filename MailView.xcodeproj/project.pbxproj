@@ -8,12 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		B5085BD124A4061D005F6E6A /* MailView.h in Headers */ = {isa = PBXBuildFile; fileRef = B5085BCF24A4061D005F6E6A /* MailView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B5085BD824A407B8005F6E6A /* MailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5085BD724A407B8005F6E6A /* MailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		B5085BCC24A4061D005F6E6A /* MailView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MailView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5085BCF24A4061D005F6E6A /* MailView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MailView.h; sourceTree = "<group>"; };
 		B5085BD024A4061D005F6E6A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B5085BD724A407B8005F6E6A /* MailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,6 +50,7 @@
 			children = (
 				B5085BCF24A4061D005F6E6A /* MailView.h */,
 				B5085BD024A4061D005F6E6A /* Info.plist */,
+				B5085BD724A407B8005F6E6A /* MailView.swift */,
 			);
 			path = MailView;
 			sourceTree = "<group>";
@@ -95,6 +98,7 @@
 				TargetAttributes = {
 					B5085BCB24A4061D005F6E6A = {
 						CreatedOnToolsVersion = 11.5;
+						LastSwiftMigration = 1150;
 					};
 				};
 			};
@@ -131,6 +135,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B5085BD824A407B8005F6E6A /* MailView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -260,6 +265,7 @@
 		B5085BD524A4061D005F6E6A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 8LK77AKP63;
@@ -276,6 +282,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = me.rahchamani.MailView;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -284,6 +291,7 @@
 		B5085BD624A4061D005F6E6A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 8LK77AKP63;
