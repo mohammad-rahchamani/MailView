@@ -7,10 +7,19 @@
 //
 
 import SwiftUI
+import MailView
+
+
 
 struct ContentView: View {
+    
+    @State private var showMailSheet = false
+    
     var body: some View {
-        Text("Hello, World!")
+        NavigationView {
+            Text("mail view showcase.")
+        }
+    
     }
 }
 
