@@ -12,12 +12,15 @@ import SwiftUI
 
 public struct MailView: UIViewControllerRepresentable {
     
-    public init() {
-        
+    let subject: String
+    
+    public init(subject: String = "") {
+        self.subject = subject
     }
     
     public func makeUIViewController(context: Context) -> MFMailComposeViewController {
         let viewController = MFMailComposeViewController()
+        viewController.setSubject(self.subject)
         //
         return viewController
     }

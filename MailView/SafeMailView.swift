@@ -7,3 +7,26 @@
 //
 
 import Foundation
+import SwiftUI
+
+public struct SafeMailView: View {
+    
+    let subject: String
+    
+    public init(subject: String = "") {
+        
+        self.subject = subject
+        
+    }
+    
+    public var body: some View {
+        Group {
+            if MailView.canSendMail {
+                MailView(subject: self.subject)
+            } else {
+                Text("test")
+            }
+        }
+    }
+    
+}
