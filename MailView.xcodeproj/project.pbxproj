@@ -9,6 +9,12 @@
 /* Begin PBXBuildFile section */
 		B5085BD124A4061D005F6E6A /* MailView.h in Headers */ = {isa = PBXBuildFile; fileRef = B5085BCF24A4061D005F6E6A /* MailView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B5085BD824A407B8005F6E6A /* MailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5085BD724A407B8005F6E6A /* MailView.swift */; };
+		B5085BE024A4092E005F6E6A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5085BDF24A4092E005F6E6A /* AppDelegate.swift */; };
+		B5085BE224A4092E005F6E6A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5085BE124A4092E005F6E6A /* SceneDelegate.swift */; };
+		B5085BE424A4092E005F6E6A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5085BE324A4092E005F6E6A /* ContentView.swift */; };
+		B5085BE624A40930005F6E6A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B5085BE524A40930005F6E6A /* Assets.xcassets */; };
+		B5085BE924A40930005F6E6A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B5085BE824A40930005F6E6A /* Preview Assets.xcassets */; };
+		B5085BEC24A40930005F6E6A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5085BEA24A40930005F6E6A /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -16,10 +22,25 @@
 		B5085BCF24A4061D005F6E6A /* MailView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MailView.h; sourceTree = "<group>"; };
 		B5085BD024A4061D005F6E6A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B5085BD724A407B8005F6E6A /* MailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MailView.swift; sourceTree = "<group>"; };
+		B5085BDD24A4092E005F6E6A /* MailViewExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MailViewExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B5085BDF24A4092E005F6E6A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		B5085BE124A4092E005F6E6A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		B5085BE324A4092E005F6E6A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		B5085BE524A40930005F6E6A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B5085BE824A40930005F6E6A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		B5085BEB24A40930005F6E6A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		B5085BED24A40930005F6E6A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		B5085BC924A4061D005F6E6A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B5085BDA24A4092E005F6E6A /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -33,6 +54,7 @@
 			isa = PBXGroup;
 			children = (
 				B5085BCE24A4061D005F6E6A /* MailView */,
+				B5085BDE24A4092E005F6E6A /* MailViewExample */,
 				B5085BCD24A4061D005F6E6A /* Products */,
 			);
 			sourceTree = "<group>";
@@ -41,6 +63,7 @@
 			isa = PBXGroup;
 			children = (
 				B5085BCC24A4061D005F6E6A /* MailView.framework */,
+				B5085BDD24A4092E005F6E6A /* MailViewExample.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -53,6 +76,28 @@
 				B5085BD724A407B8005F6E6A /* MailView.swift */,
 			);
 			path = MailView;
+			sourceTree = "<group>";
+		};
+		B5085BDE24A4092E005F6E6A /* MailViewExample */ = {
+			isa = PBXGroup;
+			children = (
+				B5085BDF24A4092E005F6E6A /* AppDelegate.swift */,
+				B5085BE124A4092E005F6E6A /* SceneDelegate.swift */,
+				B5085BE324A4092E005F6E6A /* ContentView.swift */,
+				B5085BE524A40930005F6E6A /* Assets.xcassets */,
+				B5085BEA24A40930005F6E6A /* LaunchScreen.storyboard */,
+				B5085BED24A40930005F6E6A /* Info.plist */,
+				B5085BE724A40930005F6E6A /* Preview Content */,
+			);
+			path = MailViewExample;
+			sourceTree = "<group>";
+		};
+		B5085BE724A40930005F6E6A /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				B5085BE824A40930005F6E6A /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -87,18 +132,39 @@
 			productReference = B5085BCC24A4061D005F6E6A /* MailView.framework */;
 			productType = "com.apple.product-type.framework";
 		};
+		B5085BDC24A4092E005F6E6A /* MailViewExample */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B5085BEE24A40930005F6E6A /* Build configuration list for PBXNativeTarget "MailViewExample" */;
+			buildPhases = (
+				B5085BD924A4092E005F6E6A /* Sources */,
+				B5085BDA24A4092E005F6E6A /* Frameworks */,
+				B5085BDB24A4092E005F6E6A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MailViewExample;
+			productName = MailViewExample;
+			productReference = B5085BDD24A4092E005F6E6A /* MailViewExample.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		B5085BC324A4061D005F6E6A /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 1150;
 				LastUpgradeCheck = 1150;
 				ORGANIZATIONNAME = BetterSleep;
 				TargetAttributes = {
 					B5085BCB24A4061D005F6E6A = {
 						CreatedOnToolsVersion = 11.5;
 						LastSwiftMigration = 1150;
+					};
+					B5085BDC24A4092E005F6E6A = {
+						CreatedOnToolsVersion = 11.5;
 					};
 				};
 			};
@@ -116,6 +182,7 @@
 			projectRoot = "";
 			targets = (
 				B5085BCB24A4061D005F6E6A /* MailView */,
+				B5085BDC24A4092E005F6E6A /* MailViewExample */,
 			);
 		};
 /* End PBXProject section */
@@ -125,6 +192,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B5085BDB24A4092E005F6E6A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B5085BEC24A40930005F6E6A /* LaunchScreen.storyboard in Resources */,
+				B5085BE924A40930005F6E6A /* Preview Assets.xcassets in Resources */,
+				B5085BE624A40930005F6E6A /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -139,7 +216,28 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		B5085BD924A4092E005F6E6A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B5085BE024A4092E005F6E6A /* AppDelegate.swift in Sources */,
+				B5085BE224A4092E005F6E6A /* SceneDelegate.swift in Sources */,
+				B5085BE424A4092E005F6E6A /* ContentView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		B5085BEA24A40930005F6E6A /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B5085BEB24A40930005F6E6A /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		B5085BD224A4061D005F6E6A /* Debug */ = {
@@ -313,6 +411,46 @@
 			};
 			name = Release;
 		};
+		B5085BEF24A40930005F6E6A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"MailViewExample/Preview Content\"";
+				DEVELOPMENT_TEAM = 8LK77AKP63;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = MailViewExample/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = me.rahchamani.MailViewExample;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		B5085BF024A40930005F6E6A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"MailViewExample/Preview Content\"";
+				DEVELOPMENT_TEAM = 8LK77AKP63;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = MailViewExample/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = me.rahchamani.MailViewExample;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -330,6 +468,15 @@
 			buildConfigurations = (
 				B5085BD524A4061D005F6E6A /* Debug */,
 				B5085BD624A4061D005F6E6A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B5085BEE24A40930005F6E6A /* Build configuration list for PBXNativeTarget "MailViewExample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B5085BEF24A40930005F6E6A /* Debug */,
+				B5085BF024A40930005F6E6A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
