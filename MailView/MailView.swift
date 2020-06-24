@@ -27,3 +27,12 @@ public struct MailView: UIViewControllerRepresentable {
     }
     
 }
+
+// MARK: extension
+extension MailView {
+    
+    public static var canSendMail: Bool {
+        MFMailComposeViewController.canSendMail()
+    }
+    
+}
