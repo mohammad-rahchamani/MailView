@@ -11,10 +11,12 @@ import MessageUI
 import SwiftUI
 
 public typealias AttachmentData = (Data, String, String)
+public typealias MailViewResult = MFMailComposeResult
 
 public struct MailView: UIViewControllerRepresentable {
     
     @Binding var isShowing: Bool
+    @Binding var result: Result<MailViewResult, Error>?
     
     let subject: String
     
@@ -31,6 +33,7 @@ public struct MailView: UIViewControllerRepresentable {
     
     // MARK: init
     public init(isShowing: Binding<Bool>,
+                result: Binding<Result<MailViewResult, Error>?> = .constant(nil),
                 subject: String = "",
                 toRecipients: [String]? = nil,
                 ccRecipients: [String]? = nil,
@@ -40,6 +43,7 @@ public struct MailView: UIViewControllerRepresentable {
                 attachments: [AttachmentData]? = nil,
                 preferredSendingAddress: String = "") {
         self._isShowing = isShowing
+        self._result = result
         
         self.subject = subject
         
@@ -56,7 +60,8 @@ public struct MailView: UIViewControllerRepresentable {
     }
     
     public func makeCoordinator() -> Coordinator {
-        Coordinator(isShowing: self.$isShowing)
+        Coordinator(isShowing: self.$isShowing,
+                    result: self.$result)
     }
     
     // MARK: make view controller
@@ -80,24 +85,24 @@ public struct MailView: UIViewControllerRepresentable {
                                              mimeType: attachment.1,
                                              fileName: attachment.2)
         }
-        
-        
-        //
         return viewController
     }
     
     // MARK: update view controller
     public func updateUIViewController(_ uiViewController: MFMailComposeViewController, context: Context) {
-        
+        // nothing to do here.
     }
     
     // MARK: coordinator
     public class Coordinator: NSObject {
         
         @Binding var isShowing: Bool
+        @Binding var result: Result<MailViewResult, Error>?
         
-        init(isShowing: Binding<Bool>) {
+        init(isShowing: Binding<Bool>,
+             result: Binding<Result<MailViewResult, Error>?>) {
             self._isShowing = isShowing
+            self._result = result
         }
         
     }
@@ -108,16 +113,43 @@ public struct MailView: UIViewControllerRepresentable {
 extension MailView.Coordinator: MFMailComposeViewControllerDelegate {
     
     public func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
-        self.isShowing = false
+        
+        defer {
+            self.isShowing = false
+        }
+        
+        guard let error = error else {
+            self.result = .success(result)
+            return
+        }
+        self.result = .failure(error)
     }
     
 }
 
-// MARK: mail view extension
-extension MailView {
+// MARK: canSendMail extension
+public extension MailView {
     
-    public static var canSendMail: Bool {
+    static var canSendMail: Bool {
         MFMailComposeViewController.canSendMail()
+    }
+    
+}
+
+// MARK: safe mail view extension
+public extension MailView {
+    
+    func safe() -> some View {
+        
+        Group {
+            if MailView.canSendMail {
+                self
+            } else {
+                // TODO open mailto link
+                Text("not safe!")
+            }
+        }
+        
     }
     
 }
