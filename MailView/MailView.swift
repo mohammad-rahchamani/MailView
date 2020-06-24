@@ -10,15 +10,19 @@ import Foundation
 import MessageUI
 import SwiftUI
 
-struct MailView: UIViewControllerRepresentable {
+public struct MailView: UIViewControllerRepresentable {
     
-    func makeUIViewController(context: Context) -> MFMailComposeViewController {
+    public init() {
+        
+    }
+    
+    public func makeUIViewController(context: Context) -> MFMailComposeViewController {
         let viewController = MFMailComposeViewController()
         //
         return viewController
     }
     
-    func updateUIViewController(_ uiViewController: MFMailComposeViewController, context: Context) {
+    public func updateUIViewController(_ uiViewController: MFMailComposeViewController, context: Context) {
         
     }
     
