@@ -13,11 +13,44 @@ import MailView
 
 struct ContentView: View {
     
-    @State private var showMailSheet = false
+    @State var showMailSheet = false
     
     var body: some View {
         NavigationView {
-            Text("mail view showcase.")
+            Button(action: {
+                self.showMailSheet.toggle()
+            }) {
+                Text("compose")
+            }
+        }
+        .sheet(isPresented: self.$showMailSheet) {
+            MailView(isShowing: self.$showMailSheet,
+                     resultHandler: {
+                        value in
+                        switch value {
+                        case .success(let result):
+                            switch result {
+                            case .cancelled:
+                                print("cancelled")
+                            case .failed:
+                                print("failed")
+                            case .saved:
+                                print("saved")
+                            default:
+                                print("sent")
+                            }
+                        case .failure(let error):
+                            print("error: \(error.localizedDescription)")
+                        }
+            },
+                     subject: "test Subjet",
+                     toRecipients: ["recipient@test.com"],
+                     ccRecipients: ["cc@test.com"],
+                     bccRecipients: ["bcc@test.com"],
+                     messageBody: "works like a charm!",
+                     isHtml: false)
+            .safe()
+            
         }
     
     }
