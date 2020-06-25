@@ -16,7 +16,8 @@ public typealias MailViewResult = MFMailComposeResult
 public struct MailView: UIViewControllerRepresentable {
     
     @Binding var isShowing: Bool
-    var result: ((Result<MailViewResult, Error>) -> Void)?
+    
+    let resultHandler: ((Result<MailViewResult, Error>) -> Void)?
     
     let subject: String
     
@@ -33,7 +34,7 @@ public struct MailView: UIViewControllerRepresentable {
     
     // MARK: init
     public init(isShowing: Binding<Bool>,
-                result: ((Result<MailViewResult, Error>) -> Void)? = nil,
+                resultHandler: ((Result<MailViewResult, Error>) -> Void)? = nil,
                 subject: String = "",
                 toRecipients: [String]? = nil,
                 ccRecipients: [String]? = nil,
@@ -44,7 +45,7 @@ public struct MailView: UIViewControllerRepresentable {
                 preferredSendingAddress: String = "") {
         self._isShowing = isShowing
         
-        self.result = result
+        self.resultHandler = resultHandler
         
         self.subject = subject
         
@@ -62,7 +63,7 @@ public struct MailView: UIViewControllerRepresentable {
     
     public func makeCoordinator() -> Coordinator {
         Coordinator(isShowing: self.$isShowing,
-                    result: self.result)
+                    resultHandler: self.resultHandler)
     }
     
     // MARK: make view controller
@@ -98,12 +99,13 @@ public struct MailView: UIViewControllerRepresentable {
     public class Coordinator: NSObject {
         
         @Binding var isShowing: Bool
-        var result: ((Result<MailViewResult, Error>) -> Void)?
+        
+        let resultHandler: ((Result<MailViewResult, Error>) -> Void)?
         
         init(isShowing: Binding<Bool>,
-             result: ((Result<MailViewResult, Error>) -> Void)? = nil) {
+             resultHandler: ((Result<MailViewResult, Error>) -> Void)? = nil) {
             self._isShowing = isShowing
-            self.result = result
+            self.resultHandler = resultHandler
         }
         
     }
@@ -120,10 +122,10 @@ extension MailView.Coordinator: MFMailComposeViewControllerDelegate {
         }
         
         guard let error = error else {
-            self.result?(.success(result))
+            self.resultHandler?(.success(result))
             return
         }
-        self.result?(.failure(error))
+        self.resultHandler?(.failure(error))
     }
     
 }
