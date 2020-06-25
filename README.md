@@ -1,0 +1,2 @@
+SwiftUI equivalent of MFMailComposeViewController
+
