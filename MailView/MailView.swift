@@ -144,15 +144,84 @@ public extension MailView {
     
     func safe() -> some View {
         
-        Group {
-            if MailView.canSendMail {
-                self
+        let joinedRecipients = self.toRecipients?.joined(separator: ",") ?? ""
+        
+        var nextSeparator = "?"
+        
+        var joinedCc = ""
+        if self.ccRecipients != nil {
+            joinedCc = "\(nextSeparator)cc=" + self.ccRecipients!.joined(separator: ",")
+            nextSeparator = "&"
+        }
+        
+        var joinedBcc = ""
+        if self.bccRecipients != nil {
+            joinedBcc = "\(nextSeparator)bcc=" + self.bccRecipients!.joined(separator: ",")
+            nextSeparator = "&"
+        }
+        
+        let formattedSubject = "\(nextSeparator)subject=" +
+            (self.subject.stringByAddingPercentEncodingForRFC3986() ?? "")
+        
+        let formattedBody = "&body=" +
+            (self.messageBody.stringByAddingPercentEncodingForRFC3986() ?? "")
+        
+        let mailtoUrl = URL(string: "mailto:\(joinedRecipients)\(joinedCc)\(joinedBcc)\(self.subject.count > 0 ?  formattedSubject : "")\(self.messageBody.count > 0 ? formattedBody : "")")
+        
+        if !MailView.canSendMail || true {
+            DispatchQueue.main.async {
+                // dismiss modal view
+                self.isShowing = false
+            }
+            if let url = mailtoUrl  {
+                UIApplication.shared.open(url,
+                options: [:],
+                completionHandler: {
+                    result in
+                    if result {
+                        // we have no idea if it's been sent.
+                        self.resultHandler?(.success(.sent))
+                    } else {
+                        self.resultHandler?(.failure(MailViewError.openFailed))
+                    }
+                })
             } else {
-                // TODO open mailto link
-                Text("not safe!")
+                self.resultHandler?(.failure(MailViewError.badUrl))
             }
         }
         
+        if let url = mailtoUrl,
+            true {
+            UIApplication.shared.open(url,
+                                      options: [:],
+                                      completionHandler: { _ in})
+        }
+        
+        return Group {
+            if !MailView.canSendMail {
+                self
+            } else {
+                EmptyView()
+            }
+        }
+        
+        
     }
     
+}
+
+// MARK: encode string
+extension String {
+    public func stringByAddingPercentEncodingForRFC3986() -> String? {
+      let unreserved = "-._~/?"
+      let allowedCharacterSet = NSMutableCharacterSet.alphanumeric()
+      allowedCharacterSet.addCharacters(in: unreserved)
+      return addingPercentEncoding(withAllowedCharacters: allowedCharacterSet as CharacterSet)
+    }
+}
+
+// MARK: custom errors
+public enum MailViewError: Error {
+    case badUrl
+    case openFailed
 }
