@@ -168,7 +168,7 @@ public extension MailView {
         
         let mailtoUrl = URL(string: "mailto:\(joinedRecipients)\(joinedCc)\(joinedBcc)\(self.subject.count > 0 ?  formattedSubject : "")\(self.messageBody.count > 0 ? formattedBody : "")")
         
-        if !MailView.canSendMail || true {
+        if !MailView.canSendMail {
             DispatchQueue.main.async {
                 // dismiss modal view
                 self.isShowing = false
@@ -188,17 +188,15 @@ public extension MailView {
             } else {
                 self.resultHandler?(.failure(MailViewError.badUrl))
             }
-        }
-        
-        if let url = mailtoUrl,
-            true {
-            UIApplication.shared.open(url,
-                                      options: [:],
-                                      completionHandler: { _ in})
+            if let url = mailtoUrl  {
+                UIApplication.shared.open(url,
+                                          options: [:],
+                                          completionHandler: { _ in})
+            }
         }
         
         return Group {
-            if !MailView.canSendMail {
+            if MailView.canSendMail {
                 self
             } else {
                 EmptyView()
