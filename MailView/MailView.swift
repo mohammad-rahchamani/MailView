@@ -168,7 +168,7 @@ public extension MailView {
         
         let mailtoUrl = URL(string: "mailto:\(joinedRecipients)\(joinedCc)\(joinedBcc)\(self.subject.count > 0 ?  formattedSubject : "")\(self.messageBody.count > 0 ? formattedBody : "")")
         
-        if !MailView.canSendMail || true {
+        if !MailView.canSendMail {
             DispatchQueue.main.async {
                 // dismiss modal view
                 self.isShowing = false
