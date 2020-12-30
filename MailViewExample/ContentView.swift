@@ -48,7 +48,10 @@ struct ContentView: View {
                      ccRecipients: ["cc@test.com"],
                      bccRecipients: ["bcc@test.com"],
                      messageBody: "works like a charm!",
-                     isHtml: false)
+                     isHtml: false,
+                     attachments: [("Sample file content".data(using: .utf8)!,
+                                    "Text",
+                                    "sample.txt")])
             .safe()
             
         }
