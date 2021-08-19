@@ -13,6 +13,9 @@ import SwiftUI
 public typealias AttachmentData = (Data, String, String)
 public typealias MailViewResult = MFMailComposeResult
 
+@available(iOS 13.0, tvOS 13.0, *)
+@available(macOS, unavailable)
+@available(watchOS, unavailable)
 public struct MailView: UIViewControllerRepresentable {
     
     @Binding var isShowing: Bool
@@ -113,6 +116,9 @@ public struct MailView: UIViewControllerRepresentable {
 }
 
 // MARK: coordinator extension
+@available(iOS 13.0, tvOS 13.0, *)
+@available(macOS, unavailable)
+@available(watchOS, unavailable)
 extension MailView.Coordinator: MFMailComposeViewControllerDelegate {
     
     public func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
@@ -131,6 +137,9 @@ extension MailView.Coordinator: MFMailComposeViewControllerDelegate {
 }
 
 // MARK: canSendMail extension
+@available(iOS 13.0, tvOS 13.0, *)
+@available(macOS, unavailable)
+@available(watchOS, unavailable)
 public extension MailView {
     
     static var canSendMail: Bool {
@@ -140,6 +149,9 @@ public extension MailView {
 }
 
 // MARK: safe mail view extension
+@available(iOS 13.0, tvOS 13.0, *)
+@available(macOS, unavailable)
+@available(watchOS, unavailable)
 public extension MailView {
     
     func safe() -> some View {
