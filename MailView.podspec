@@ -1,7 +1,7 @@
 Pod::Spec.new do |spec|
 
   spec.name             = "MailView"
-  spec.version          = "1.0.0"
+  spec.version          = "1.1.0"
   spec.summary          = "SwiftUI Mail composer view."
 
   spec.description      = <<-DESC
@@ -16,7 +16,7 @@ Pod::Spec.new do |spec|
   
   spec.platform         = :ios, "13.0"
   
-  spec.swift_version    = "5.0"
+  spec.swift_version    = "5.5"
 
   spec.source           = { :git => "https://github.com/mohammad-rahchamani/MailView.git", :tag => "#{spec.version}" }
 
