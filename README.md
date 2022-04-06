@@ -7,12 +7,12 @@ SwiftUI equivalent of MFMailComposeViewController
 
 ### Swift Package Manager:
 `dependencies: [
-    .package(url: "https://github.com/mohammad-rahchamani/MailView.git", .upToNextMajor(from: "1.0.0"))
+    .package(url: "https://github.com/mohammad-rahchamani/MailView.git", .upToNextMajor(from: "1.2.0"))
 ]`
 
 ### CocoaPods:
 
-`pod 'MailView', '~> 1.0.0'
+`pod 'MailView', '~> 1.2.0'
 
 ## Usage:
 

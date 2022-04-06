@@ -1,7 +1,7 @@
 Pod::Spec.new do |spec|
 
   spec.name             = "MailView"
-  spec.version          = "1.1.0"
+  spec.version          = "1.2.0"
   spec.summary          = "SwiftUI Mail composer view."
 
   spec.description      = <<-DESC
